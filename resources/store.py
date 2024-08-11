@@ -50,7 +50,7 @@ class Store(MethodView):
 
 # A different endpoint for all the stores
 @blp.route("/store")
-class Store(MethodView):
+class StoreList(MethodView):
 
     # Get all stores
     @blp.response(201, StoreSchema(many=True))
