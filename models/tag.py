@@ -1,5 +1,9 @@
+
+# Imports
 from db import db
 
+
+# Table for tags
 # Model inherits from db.Model
 class TagModel(db.Model):
 

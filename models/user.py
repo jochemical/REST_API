@@ -1,5 +1,8 @@
+
+# Imports
 from db import db
 
+# Table for users
 # Model inherits from db.Model
 class UserModel(db.Model):
 

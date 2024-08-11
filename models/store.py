@@ -1,6 +1,8 @@
+
 # Imports
 from db import db
 
+# Table for all the stores
 class StoreModel(db.Model):
     __tablename__ = 'stores'
 

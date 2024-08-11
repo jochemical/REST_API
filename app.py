@@ -10,6 +10,8 @@ import models
 # To get easy acces to our models. __init__.py in models is called automatically during import.
 # This import has to be done before creating the Flask app with app=Flask(__name__)
 
+from dotenv import load_dotenv
+
 from flask import Flask #, request
 from flask_smorest import Api, abort
 from db import db # To import our (SQLAlchemy-database)
@@ -61,9 +63,11 @@ def create_app(db_url=None):
     api = Api(app)
 
     # app.config["JWT_SECRET_KEY"] = secrets.SystemRandom().getrandbits(128)
-    app.config["JWT_SECRET_KEY"] = "113727437302778478799200279264298836193"
+    # app.config["JWT_SECRET_KEY"] = ""
     # Keys has to be stored within environment variables
 
+    # Added by myself
+    app.config["JWT_SECRET_KEY"] = os.environ.get("JWT_SECRET_KEY")
 
     jwt = JWTManager(app)
 

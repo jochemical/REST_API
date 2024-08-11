@@ -1,3 +1,4 @@
+
 # Import the database db (a SQLAlchemy object, or instance)
 from db import db
 # we can use this db-object to define which tables we want to use and
@@ -33,11 +34,12 @@ class ItemModel(db.Model):
     # So we are actually  grabbing the ROW which has this store-id within the store-table
     store = db.relationship("StoreModel", back_populates="items")
     # So we add a variabel (called store) to each itemclass-object which remembers the storeclass-object where the item is linked to.
-    # Somehow SQLAlchemy knows we are aiming for the store_id selected above, because
+    # SQLAlchemy knows we are aiming for the store_id selected above, because
     # stores.id uses StoreModel
-    # back_populates="items" is needed to fill/poppulate the items variable of the store-object, so when we create a new item...
+    # back_populates="items" is needed to fill/poppulate the items variable of the store-object, so when we create a new item
     # the storeclassobject 'gets' the itemclassobject as well, so immediatly we also add something to the related storeclassobject
-    # This is logical, because when an new item is created, we have to 'put' the item also in the storeclassobject (within the store-stable in the column for items )
+    # This is logical, because when an new item is created, we have to 'put' the item also in the storeclassobject 
+    # (within the store-stable in the column for items )
 
     # Related tags to this item (many-to-many relationship)
     tags = db.relationship("TagModel", back_populates="items", secondary="items_tags")
