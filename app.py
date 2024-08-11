@@ -57,6 +57,7 @@ def create_app(db_url=None):
     # Connect the Flask app to SQLAlchemy !
     db.init_app(app) 
 
+
     migrate = Migrate(app, db)
 
     # Create API
