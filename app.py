@@ -12,7 +12,7 @@ import models
 
 from dotenv import load_dotenv
 
-from flask import Flask #, request
+from flask import Flask, jsonify #, request
 from flask_smorest import Api, abort
 from db import db # To import our (SQLAlchemy-database)
 from flask_jwt_extended import JWTManager
