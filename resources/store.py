@@ -1,5 +1,5 @@
 # Imports
-from sqlite3 import IntegrityError
+# from sqlite3 import IntegrityError
 import uuid
 from flask import request
 from flask.views import MethodView
@@ -60,7 +60,7 @@ class StoreList(MethodView):
 
     # Create new store
     @blp.arguments(StoreSchema)
-    @blp.response(200, StoreSchema)
+    @blp.response(201, StoreSchema)
     def post(self, store_data):
         # To get the posted JSON file, we use request from Python
         # store_data = request.get_json()
