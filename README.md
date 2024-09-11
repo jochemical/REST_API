@@ -1,2 +1,3 @@
 # REST API project
-Readme still empty.
+
+This Flask web application serves as a REST API for managing warehouse data. Users can register and log in to create stores, items, and tags, all of which are stored in a SQLite database. The application runs within a Docker container. Through this project, I gained experience working with data models, schemas, and migrations using Alembic in SQLAlchemy, and I learned to write JWTs and access tokens for secure authentication. I also deepened my understanding of Docker, including images, volumes, containers and Docker Compose, and practiced using Insomnia and DBeaver. While this web application does not include a frontend, I acquired a wide range of techniques that are applicable to many other projects. This web application is based on the 2024 course "REST APIs with Flask and Python" by Teclado, taught by Jose Salvatierra.

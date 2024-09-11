@@ -35,9 +35,14 @@ class Store(MethodView):
     # Delete store
     def delete(self, store_id):
         store = StoreModel.query.get_or_404(store_id)
-        db.session.delete(store)
-        db.session.commit()
-        return {"message": "Store deleted"}
+
+        try:
+            db.session.delete(store)
+            db.session.commit()
+            return {"message": "Store deleted"}
+        except IntegrityError as e:
+            db.session.rollback()
+            abort(400, message="Integrity error occurred: (store contains items!) " + str(e))
         # raise NotImplementedError("Deleting a store is not implemented.")
 
         # try:

@@ -9,8 +9,6 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-
-
 # # Pythonfile for databases
 
 # items = {}
